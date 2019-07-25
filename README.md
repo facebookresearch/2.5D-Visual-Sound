@@ -25,6 +25,7 @@ If you find our code or project useful in your research, please cite:
 The [FAIR-Play](https://github.com/facebookresearch/FAIR-Play) repository contains the dataset we collected and used in our paper. It contains 1,871 video clips and their corresponding binaural audio clips recorded in a music room. The code provided can be used to train mon2binaural models on this dataset.
 
 ### Training and Testing
+(The code has beed tested under the following system environment: Ubuntu 16.04.6 LTS, CUDA 9.0, Python 2.7.15, PyTorch 1.0.0)
 1. Download the FAIR-Play dataset and prepare the hdf5 splits files accordingly by adding the correct root prefix.
 
 2. [OPTIONAL] Preprocess the audio files using reEncodeAudio.py to accelerate the training process.
