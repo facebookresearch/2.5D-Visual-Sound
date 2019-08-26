@@ -73,7 +73,7 @@ def main():
 		data['audio_diff_spec'] = torch.FloatTensor(generate_spectrogram(audio_segment_channel1 - audio_segment_channel2)).unsqueeze(0) #unsqueeze to add a batch dimension
 		data['audio_mix_spec'] = torch.FloatTensor(generate_spectrogram(audio_segment_channel1 + audio_segment_channel2)).unsqueeze(0) #unsqueeze to add a batch dimension
 		#get the frame index for current window
-		frame_index = int(round((((sliding_window_start + samples_per_window / 2.0) / audio.shape[-1]) * opt.audio_length + 0.05) * 10 ))
+		frame_index = int(round((((sliding_window_start + samples_per_window / 2.0) / audio.shape[-1]) * opt.input_audio_length + 0.05) * 10 ))
 		image = Image.open(os.path.join(opt.video_frame_path, str(frame_index).zfill(6) + '.png')).convert('RGB')
 		#image = image.transpose(Image.FLIP_LEFT_RIGHT)
 		frame = vision_transform(image).unsqueeze(0) #unsqueeze to add a batch dimension
@@ -100,7 +100,7 @@ def main():
 	data['audio_diff_spec'] = torch.FloatTensor(generate_spectrogram(audio_segment_channel1 - audio_segment_channel2)).unsqueeze(0) #unsqueeze to add a batch dimension
 	data['audio_mix_spec'] = torch.FloatTensor(generate_spectrogram(audio_segment_channel1 + audio_segment_channel2)).unsqueeze(0) #unsqueeze to add a batch dimension
 	#get the frame index for last window
-	frame_index = int(round(((10 - opt.audio_length / 2.0) + 0.05) * 10))
+	frame_index = int(round(((opt.input_audio_length - opt.audio_length / 2.0) + 0.05) * 10))
 	image = Image.open(os.path.join(opt.video_frame_path, str(frame_index).zfill(6) + '.png')).convert('RGB')
 	#image = image.transpose(Image.FLIP_LEFT_RIGHT)
 	frame = vision_transform(image).unsqueeze(0) #unsqueeze to add a batch dimension

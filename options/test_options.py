@@ -14,7 +14,8 @@ class TestOptions(BaseOptions):
 
 		self.parser.add_argument('--input_audio_path', required=True, help='path to the input audio file')
 		self.parser.add_argument('--video_frame_path', required=True, help='path to the input video frames')
-		self.parser.add_argument('--output_dir_root', type=str, default='test_output')
+		self.parser.add_argument('--output_dir_root', type=str, default='test_output', help='path to the output files')
+		self.parser.add_argument('--input_audio_length', type=float, default=10, help='length of the testing video/audio')
 		self.parser.add_argument('--hop_size', default=0.05, type=float, help='the hop length to perform audio spatialization in a sliding window approach')
 
 		#model arguments
