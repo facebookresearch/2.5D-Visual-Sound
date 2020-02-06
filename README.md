@@ -40,6 +40,11 @@ python train.py --hdf5FolderPath /YOUR_CODE_PATH/2.5d_visual_sound/hdf5/ --name 
 python demo.py --input_audio_path /BINAURAL_AUDIO_PATH --video_frame_path /VIDEO_FRAME_PATH --weights_visual /VISUAL_MODEL_PATH --weights_audio /AUDIO_MODEL_PATH --output_dir_root /YOUT_OUTPUT_DIR/ --input_audio_length 10 --hop_size 0.05
 ```
 
+5. Use the following command for evaluation:
+```
+python evaluate.py --results_root /YOUR_RESULTS --normalization True
+```
+
 ### Acknowlegements
 Portions of the code are adapted from the CycleGAN implementation (https://github.com/junyanz/CycleGAN) and the Sound-of-Pixels implementation (https://github.com/hangzhaomit/Sound-of-Pixels). Please also refer to the original License of these projects.
 
