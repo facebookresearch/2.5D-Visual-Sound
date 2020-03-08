@@ -39,6 +39,7 @@ python train.py --hdf5FolderPath /YOUR_CODE_PATH/2.5d_visual_sound/hdf5/ --name 
 ```
 python demo.py --input_audio_path /BINAURAL_AUDIO_PATH --video_frame_path /VIDEO_FRAME_PATH --weights_visual /VISUAL_MODEL_PATH --weights_audio /AUDIO_MODEL_PATH --output_dir_root /YOUT_OUTPUT_DIR/ --input_audio_length 10 --hop_size 0.05
 ```
+The model trained on split1 of FAIR-Play is shared at: https://drive.google.com/open?id=1qh6PikVtqWXM-pz_2EF6AemoX7Q6tMgQ
 
 5. Use the following command for evaluation:
 ```
